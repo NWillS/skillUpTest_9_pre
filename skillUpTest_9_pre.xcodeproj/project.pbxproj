@@ -18,6 +18,13 @@
 		BE5A52F920456715005BA312 /* RealmDaoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A52F820456715005BA312 /* RealmDaoHelper.swift */; };
 		BE5A52FC2045697A005BA312 /* ThumbnailDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A52FB2045697A005BA312 /* ThumbnailDto.swift */; };
 		BE5A52FE20456A66005BA312 /* ThumbnailDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A52FD20456A66005BA312 /* ThumbnailDao.swift */; };
+		BE5A53012046A7DE005BA312 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A52FF2046A7DD005BA312 /* APIClient.swift */; };
+		BE5A53022046A7DE005BA312 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A53002046A7DE005BA312 /* Router.swift */; };
+		BEA8F278204E98B700DED31E /* TimelineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8F277204E98B700DED31E /* TimelineAPI.swift */; };
+		BEA8F27A204E98DD00DED31E /* TimelineResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8F279204E98DD00DED31E /* TimelineResponse.swift */; };
+		BEA8F27C204E9AC700DED31E /* TweetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8F27B204E9AC700DED31E /* TweetItem.swift */; };
+		BEA8F27F2052B6E100DED31E /* TimelineTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8F27E2052B6E100DED31E /* TimelineTableViewProvider.swift */; };
+		BEA8F2812052B70200DED31E /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8F2802052B70200DED31E /* TimelineTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,13 @@
 		BE5A52F820456715005BA312 /* RealmDaoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDaoHelper.swift; sourceTree = "<group>"; };
 		BE5A52FB2045697A005BA312 /* ThumbnailDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailDto.swift; sourceTree = "<group>"; };
 		BE5A52FD20456A66005BA312 /* ThumbnailDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailDao.swift; sourceTree = "<group>"; };
+		BE5A52FF2046A7DD005BA312 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BE5A53002046A7DE005BA312 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		BEA8F277204E98B700DED31E /* TimelineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineAPI.swift; sourceTree = "<group>"; };
+		BEA8F279204E98DD00DED31E /* TimelineResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineResponse.swift; sourceTree = "<group>"; };
+		BEA8F27B204E9AC700DED31E /* TweetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetItem.swift; sourceTree = "<group>"; };
+		BEA8F27E2052B6E100DED31E /* TimelineTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewProvider.swift; sourceTree = "<group>"; };
+		BEA8F2802052B70200DED31E /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		E97D4A1DA41D46ED63F2BE79 /* Pods-skillUpTest_9_preTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skillUpTest_9_preTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-skillUpTest_9_preTests/Pods-skillUpTest_9_preTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC8770146B3EB8F3C11FD3CB /* Pods_skillUpTest_9_preTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skillUpTest_9_preTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +121,7 @@
 		BE1A3FEF20453414006CAB0C /* skillUpTest_9_pre */ = {
 			isa = PBXGroup;
 			children = (
+				BEA8F27D2052B6B200DED31E /* Views */,
 				BE5A52FA20456962005BA312 /* Models */,
 				BE1A401B20453855006CAB0C /* Helpers */,
 				BE1A40112045343D006CAB0C /* Controllers */,
@@ -162,7 +177,8 @@
 		BE1A401B20453855006CAB0C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BE5A52F820456715005BA312 /* RealmDaoHelper.swift */,
+				BE5A53042046A7F6005BA312 /* Alamofire */,
+				BE5A53032046A7EB005BA312 /* Realm */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -170,10 +186,55 @@
 		BE5A52FA20456962005BA312 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BEA8F276204E989F00DED31E /* Alamofire */,
+				BEA8F275204E989500DED31E /* Realm */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE5A53032046A7EB005BA312 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A52F820456715005BA312 /* RealmDaoHelper.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		BE5A53042046A7F6005BA312 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A52FF2046A7DD005BA312 /* APIClient.swift */,
+				BE5A53002046A7DE005BA312 /* Router.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		BEA8F275204E989500DED31E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
 				BE5A52FB2045697A005BA312 /* ThumbnailDto.swift */,
 				BE5A52FD20456A66005BA312 /* ThumbnailDao.swift */,
 			);
-			path = Models;
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		BEA8F276204E989F00DED31E /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				BEA8F277204E98B700DED31E /* TimelineAPI.swift */,
+				BEA8F279204E98DD00DED31E /* TimelineResponse.swift */,
+				BEA8F27B204E9AC700DED31E /* TweetItem.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		BEA8F27D2052B6B200DED31E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEA8F27E2052B6E100DED31E /* TimelineTableViewProvider.swift */,
+				BEA8F2802052B70200DED31E /* TimelineTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E89E2617052A572C72AFC927 /* Frameworks */ = {
@@ -298,9 +359,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-skillUpTest_9_preTests/Pods-skillUpTest_9_preTests-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,9 +396,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-skillUpTest_9_pre/Pods-skillUpTest_9_pre-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -350,12 +419,18 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -372,12 +447,18 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -425,8 +506,15 @@
 				BE5A52FC2045697A005BA312 /* ThumbnailDto.swift in Sources */,
 				BE5A52FE20456A66005BA312 /* ThumbnailDao.swift in Sources */,
 				BE1A3FF120453414006CAB0C /* AppDelegate.swift in Sources */,
+				BE5A53022046A7DE005BA312 /* Router.swift in Sources */,
+				BEA8F2812052B70200DED31E /* TimelineTableViewCell.swift in Sources */,
 				BE1A4017204534B1006CAB0C /* TimelineViewController.swift in Sources */,
+				BEA8F278204E98B700DED31E /* TimelineAPI.swift in Sources */,
 				BE5A52F920456715005BA312 /* RealmDaoHelper.swift in Sources */,
+				BEA8F27C204E9AC700DED31E /* TweetItem.swift in Sources */,
+				BE5A53012046A7DE005BA312 /* APIClient.swift in Sources */,
+				BEA8F27A204E98DD00DED31E /* TimelineResponse.swift in Sources */,
+				BEA8F27F2052B6E100DED31E /* TimelineTableViewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68BKV3FXAV;
 				INFOPLIST_FILE = "$(SRCROOT)/skillUpTest_9_pre/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.neec.skillUpTest-9-pre";
@@ -587,6 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68BKV3FXAV;
 				INFOPLIST_FILE = "$(SRCROOT)/skillUpTest_9_pre/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.ac.neec.skillUpTest-9-pre";

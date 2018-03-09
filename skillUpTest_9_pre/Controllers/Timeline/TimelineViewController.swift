@@ -6,14 +6,23 @@
 //  Copyright © 2018年 Seidi Nakamura. All rights reserved.
 //
 
+import TwitterKit
 import UIKit
 
 class TimelineViewController: UIViewController {
+    let api = TimelineAPI()
+    let dataSource = TimelineTableViewProvider()
+    var tweetList: [TweetItem] = []
 
+    @IBOutlet weak private var timelineTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timelineTableView.dataSource = dataSource
+        api.delegate = self
 
-        // Do any additional setup after loading the view.
+        api.getTimeline()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +30,12 @@ class TimelineViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension TimelineViewController: TimelineAPIDelegate {
+    func receivedTweetList(tweetList: [TweetItem]) {
+        dataSource.set(tweetList: tweetList)
+        timelineTableView.reloadData()
     }
-    */
-
+    
 }

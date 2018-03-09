@@ -4,6 +4,8 @@
 def install_pods
     pod 'RealmSwift'
     pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'TwitterKit'
 end
 
 

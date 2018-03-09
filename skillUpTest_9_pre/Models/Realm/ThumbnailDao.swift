@@ -12,7 +12,7 @@ import UIKit
 final class ThumbnailDao {
     static let daoHelper = RealmDaoHelper<ThumbnailDto>()
 
-    static func addThumbnail(name: String, image:UIImage) {
+    static func addThumbnail(name: String, image: UIImage) {
         let thumbnail = ThumbnailDto()
         
         thumbnail.userName = name
